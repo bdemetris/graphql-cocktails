@@ -38,8 +38,8 @@ function matchIngredentToMeasure(data) {
   return results;
 }
 
-class CoctailsDB {
-  async coctails({ name }) {
+class CocktailsDB {
+  async cocktails({ name }) {
     const options = {
       query: {
         s: name,
@@ -62,4 +62,4 @@ class CoctailsDB {
   }
 }
 
-module.exports = CoctailsDB;
+module.exports = CocktailsDB;

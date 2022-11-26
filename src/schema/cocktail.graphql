@@ -1,4 +1,4 @@
-type Coctail {
+type Cocktail {
     name: String!
     ingredients: [Ingredient]
     image: String

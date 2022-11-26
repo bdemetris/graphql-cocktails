@@ -1,6 +1,6 @@
 const resolvers = {
   Query: {
-    coctails: (_, args, ctx) => ctx.connectors.CoctailsDB.coctails(args),
+    cocktails: (_, args, ctx) => ctx.connectors.CocktailsDB.cocktails(args),
   },
 };
 

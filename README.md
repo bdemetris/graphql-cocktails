@@ -1,4 +1,4 @@
-# 🍹 graphql-coctails
+# 🍹 graphql-cocktails
 
 `npm start`
 
@@ -8,7 +8,7 @@ try a query like...
 
 ```
 {
-  coctails(name: "margarita") {
+  cocktails(name: "margarita") {
     name
     ingredients {
       name

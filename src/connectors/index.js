@@ -1,7 +1,7 @@
-const CoctailsDB = require('./CoctailsDB');
+const CocktailsDB = require('./CocktailsDB');
 
 const createConnectors = () => ({
-  CoctailsDB: new CoctailsDB(),
+  CocktailsDB: new CocktailsDB(),
 });
 
 module.exports = createConnectors;
