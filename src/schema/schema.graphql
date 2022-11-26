@@ -1,0 +1,6 @@
+# import Coctail from 'coctail.graphql'
+
+type Query {
+  coctails(name: String!): [Coctail]!
+}
+

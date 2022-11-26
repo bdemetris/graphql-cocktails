@@ -1,0 +1,11 @@
+type Coctail {
+    name: String!
+    ingredients: [Ingredient]
+    image: String
+    instructions: String
+}
+
+type Ingredient {
+    name: String
+    measure: String
+}
