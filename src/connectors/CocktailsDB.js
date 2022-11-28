@@ -26,6 +26,7 @@ function matchIngredentToMeasure(data) {
           }
         });
         const c = {
+          id: value.idDrink,
           name: value.strDrink,
           ingredients,
           image: value.strDrinkThumb,
@@ -103,6 +104,7 @@ class CocktailsDB {
     );
     const { drinks } = body;
     const results = matchIngredentToMeasure(drinks);
+    console.log(results);
     return results.map(result => ({
       id: result.id,
       name: result.name,
