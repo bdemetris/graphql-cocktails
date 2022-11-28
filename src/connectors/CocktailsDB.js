@@ -30,6 +30,8 @@ function matchIngredentToMeasure(data) {
           ingredients,
           image: value.strDrinkThumb,
           instructions: value.strInstructions,
+          iba: value.strIBA,
+          glass: value.strGlass,
         };
         results.push(c);
       }
@@ -54,10 +56,61 @@ class CocktailsDB {
     const { drinks } = body;
     const results = matchIngredentToMeasure(drinks);
     return results.map(result => ({
+      id: result.id,
       name: result.name,
       ingredients: result.ingredients,
       image: result.image,
       instructions: result.instructions,
+      iba: result.iba,
+      glass: result.glass,
+    }));
+  }
+
+  async cocktail({ id }) {
+    const options = {
+      query: {
+        i: id,
+      },
+      json: true,
+    };
+
+    const { body } = await get(
+      'https://thecocktaildb.com/api/json/v1/1/lookup.php',
+      options,
+    );
+    const { drinks } = body;
+    const results = matchIngredentToMeasure(drinks);
+    return results.map(result => ({
+      id: result.id,
+      name: result.name,
+      ingredients: result.ingredients,
+      image: result.image,
+      instructions: result.instructions,
+      iba: result.iba,
+      glass: result.glass,
+    }));
+  }
+
+  async random() {
+    const options = {
+      query: {},
+      json: true,
+    };
+
+    const { body } = await get(
+      'https://thecocktaildb.com/api/json/v1/1/random.php',
+      options,
+    );
+    const { drinks } = body;
+    const results = matchIngredentToMeasure(drinks);
+    return results.map(result => ({
+      id: result.id,
+      name: result.name,
+      ingredients: result.ingredients,
+      image: result.image,
+      instructions: result.instructions,
+      iba: result.iba,
+      glass: result.glass,
     }));
   }
 }

@@ -1,8 +1,11 @@
 type Cocktail {
+    id: String!
     name: String!
     ingredients: [Ingredient]
     image: String
     instructions: String
+    iba: String
+    glass: String
 }
 
 type Ingredient {

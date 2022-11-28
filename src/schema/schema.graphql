@@ -2,5 +2,7 @@
 
 type Query {
   cocktails(name: String!): [Cocktail]!
+  cocktail(id: String!): [Cocktail]!
+  random: [Cocktail]!
 }
 
